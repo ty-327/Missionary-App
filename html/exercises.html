@@ -16,12 +16,13 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="../css/styles.css" rel="stylesheet" />
         <style>
-            #questionnaire {
+            /* Additional CSS for Journal Section */
+            #journal {
                 text-align: center;
                 padding: 60px 0;
             }
 
-            .questionnaire-form {
+            #journalForm {
                 max-width: 600px;
                 margin: auto;
                 background-color: #f9f9f9;
@@ -30,15 +31,17 @@
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             }
 
-            .form-control {
+            #entryText {
                 width: 100%;
                 padding: 10px;
                 box-sizing: border-box;
                 margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
                 resize: vertical;
             }
 
-            .btn-primary {
+            button {
                 background-color: #4CAF50;
                 color: white;
                 padding: 10px 15px;
@@ -47,25 +50,41 @@
                 cursor: pointer;
             }
 
-            .btn-primary:hover {
+            button:hover {
                 background-color: #45a049;
             }
 
-            #submittedText {
-                display: none;
-                background-color: #4CAF50; /* Green background color */
-                color: white; /* White text color */
-                padding: 20px; /* Padding to give some space around the text */
-                margin-top: 20px; /* Margin at the top to separate it from other elements */
-                border-radius: 5px; /* Rounded corners for a nicer look */
-                max-width: 600px; /* Set the maximum width to match the form */
-                margin-left: auto; /* Center the box by auto-margin on the left and right */
-                margin-right: auto;
-            }
-            .questionnaire-form label {
+            #journalEntries {
+                max-width: 600px;
+                margin: 20px auto;
                 text-align: left;
-                display: block;
-                margin-bottom: 5px;
+            }
+
+            #journalEntries p {
+                background-color: #f2f2f2;
+                padding: 10px;
+                border-radius: 4px;
+                margin-bottom: 10px;
+            }
+            .exercise {
+                max-width: 600px; /* Set the maximum width for the exercise content */
+                margin: 20px auto; /* Add margin for spacing */
+            }
+
+            .exercise button {
+                margin-bottom: 10px; /* Add space between the button and the exercise content */
+            }
+
+            .exercise .card {
+                padding: 20px; /* Add padding to the exercise content */
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                font-size: 18px; /* Set the font size for the exercise text */
+            }
+
+            .exercise .card ol {
+                text-align: left; /* Align text to the left */
+                padding-left: 20px; /* Add left padding to create space between the numbers and text */
             }
         </style>
     </head>
@@ -81,57 +100,84 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="../index.html">Home</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#">Questionnaire</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="questions.html">Questionnaire</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="journal.html">Journal</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="exercises.html">Exercises</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#">Exercises</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- Questionnaire Section -->
-        <section class="page-section portfolio" id="questionnaire" style="margin-top: 80px;">
+        <!-- Mental Health Exercises Section -->
+        <section class="page-section portfolio" id="exercises" style="margin-top: 80px;">
             <div class="container">
-                <!-- Section Heading -->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Questionnaire</h2>
+                <!-- Mental Health Exercises Section Heading -->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Mental Health Exercises</h2>
                 <!-- Icon Divider -->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-icon"><i class="fas fa-heart"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
-
-                <!-- Questionnaire Form -->
-                <div class="questionnaire-form">
-                    <!-- Question 1: How are you feeling? -->
-                    <div class="mb-3">
-                        <label for="feeling">1. How are you feeling? Try to list some specific emotions.</label>
-                        <textarea class="form-control" id="feeling" rows="4" placeholder="Enter your feelings here"></textarea>
+        
+                <!-- Exercise 1: Deep Breathing -->
+                <div class="exercise text-center mb-4">
+                    <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#deepBreathing" aria-expanded="false" aria-controls="deepBreathing">
+                        <h3 class="text-white">Deep Breathing</h3>
+                    </button>
+                    <div class="collapse" id="deepBreathing">
+                        <div class="card card-body">
+                            <ol>
+                                <li>Find a comfortable and quiet place to sit or lie down.</li>
+                                <li>Inhale deeply through your nose for a count of 4.</li>
+                                <li>Hold your breath for a count of 4.</li>
+                                <li>Exhale slowly through your mouth for a count of 4.</li>
+                                <li>Repeat this process several times.</li>
+                            </ol>
+                        </div>
                     </div>
+                </div>
 
-                    <!-- Question 2: Where are these feelings coming from? -->
-                    <div class="mb-3">
-                        <label for="feelingsSource">2. Where are these feelings coming from? Think back on your day/week/month and try to identify what is causing them.</label>
-                        <textarea class="form-control" id="feelingsSource" rows="4" placeholder="Enter the source of your feelings here"></textarea>
+        
+                <!-- Exercise 2: Gratitude Journaling -->
+                <div class="exercise text-center mb-4">
+                    <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#gratitudeJournaling" aria-expanded="false" aria-controls="gratitudeJournaling">
+                        <h3 class="text-white">Gratitude Journaling</h3>
+                    </button>
+                    <div class="collapse" id="gratitudeJournaling">
+                        <div class="card card-body">
+                            <ol>
+                                <li>Take a moment to reflect on your day.</li>
+                                <li>List three things you are grateful for today.</li>
+                                <li>Consider the positive aspects of your life.</li>
+                            </ol>
+                        </div>
                     </div>
-
-                    <!-- Submit Button -->
-                    <button type="button" class="btn btn-primary" onclick="submitQuestionnaire()">Submit</button>
                 </div>
-                <br>
-                <br>
-                <br>
 
-                <!-- Display Submitted Text -->
-                <div id="submittedText" style="margin-top: 20px;"></div>
-
-
-                <div style="margin-top: 20px; text-align: center;">
-                    <a href="journal.html" class="btn btn-primary">Go to Journal</a>
-                    <a href="exercises.html" class="btn btn-primary">Go to Exercises</a>
+        
+                <!-- Exercise 3: Mindful Walking -->
+                <div class="exercise text-center mb-4">
+                    <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#mindfulWalking" aria-expanded="false" aria-controls="mindfulWalking">
+                        <h3 class="text-white">Mindful Walking</h3>
+                    </button>
+                    <div class="collapse" id="mindfulWalking">
+                        <div class="card card-body">
+                            <ol>
+                                <li>Take a short walk in a quiet environment.</li>
+                                <li>Pay attention to each step as you walk.</li>
+                                <li>Notice the sensations in your feet and legs.</li>
+                                <li>Be aware of the sounds around you.</li>
+                            </ol>
+                        </div>
+                    </div>
                 </div>
+
+        
+                <!-- Add more exercises as needed -->
+        
             </div>
         </section>
-
+        
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">
@@ -179,19 +225,20 @@
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
         <script>
-            // JavaScript for the Questionnaire Section
-            function submitQuestionnaire() {
-                // Your pre-determined text
-                var predeterminedText = "<h4 id=\"additionalText\">Great job!</h4><p>Now that you have identified your emotions and where they are coming from, feel free to copy your entries into your journal and/or try some guided exercises.</p>";
-        
-                // Display the predetermined text
-                document.getElementById("submittedText").innerHTML = predeterminedText;
-        
-                // Show the submittedText div
-                document.getElementById("submittedText").style.display = "block";
-        
-                // Scroll down to the additional text
-                document.getElementById("additionalText").scrollIntoView({ behavior: "smooth" });
+            // JavaScript for the Journal Section
+            function addJournalEntry() {
+                // Get the entry text from the textarea
+                var entryText = document.getElementById("entryText").value;
+
+                // Create a new div element for the entry
+                var entryDiv = document.createElement("div");
+                entryDiv.innerHTML = "<p>" + entryText + "</p>";
+
+                // Append the new entry to the journalEntries div
+                document.getElementById("journalEntries").appendChild(entryDiv);
+
+                // Clear the textarea after adding the entry
+                document.getElementById("entryText").value = "";
             }
         </script>
     </body>
