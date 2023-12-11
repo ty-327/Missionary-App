@@ -66,6 +66,27 @@
             border-radius: 4px;
             margin-bottom: 10px;
         }
+        #youtube-videos {
+            margin-top: 80px;
+        }
+
+        #youtubeVideoContainer {
+            text-align: center;
+            padding-bottom: 40px;
+            padding-top: 0px; /*Adjust the top padding as needed*/
+        }
+        #videoLabel {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 34px;
+            margin-bottom: 20px; /* Adjust the margin as needed */
+        }
+        #videoLabel2 {
+            text-align: center;
+            padding-top: 150px;
+            font-size: 34px;
+            margin-bottom: 20px; /* Adjust the margin as needed */
+        }
     </style>
 </head>
     <body id="page-top">
@@ -88,29 +109,24 @@
                 </div>
             </div>
         </nav>
-        <!-- Journal Section -->
-        <section class="page-section portfolio" id="journal" style="margin-top: 80px;">
-            <div class="container">
-                <!-- Journal Section Heading -->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Journal</h2>
-                <!-- Icon Divider -->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-
-                <!-- Journal Entries -->
-                <div id="journalEntries"></div>
-
-                <!-- Add New Entry Form -->
-                <form id="journalForm">
-                    <label for="entryText">New Journal Entry:</label>
-                    <textarea id="entryText" rows="4" cols="50"></textarea>
-                    <button type="button" onclick="addJournalEntry()">Add Entry</button>
-                </form>
-            </div>
-        </section>
+        <!-- Embedded YouTube Videos -->
+        <div id="videoLabel2">10-minute Guided Meditation</div>
+        <div id="youtubeVideoContainer" style="text-align: center;">
+            <!-- Replace the following iframe with your YouTube video iframe(s) -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/xv-ejEOogaA?si=7fOM4KiasNKuC149" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <!-- Add more iframe elements for additional videos -->
+        </div>
+        <div id="videoLabel">20-minute Guided Meditation</div>
+        <div id="youtubeVideoContainer" style="text-align: center;">
+            <!-- Replace the following iframe with your YouTube video iframe(s) -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/zYpvOotEbhQ?si=RHwCAej_TgvyYKBK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <!-- Add more iframe elements for additional videos -->
+        </div>
+        <div id="videoLabel">3-hour Guided Meditation</div>
+        <div id="youtubeVideoContainer" style="text-align: center;">
+            <!-- Replace the following iframe with your YouTube video iframe(s) -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/qkcMIemkpOI?si=XpcYnZgyiMuZ5DMS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">
